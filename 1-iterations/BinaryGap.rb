@@ -7,8 +7,10 @@
 #    https://graphics.stanford.edu/~seander/bithacks.html#ZerosOnRightModLookup。
 # 4. 如果有找到右邊連續為 0 的個數，使用二元運算子 "右移 (>>)"，將 N 直接往右移至非 0 的位址，再開始尋找。
 # 5. 當 N 大於 0 則重複以下步驟
-#   (1) N 除以 2 取餘數 (%)，如果為 1，則重置 "目前計算數量"，如果為 0，則累加 "目前計算數量"
-#   (2) 如果 "目前計算數量" 大於 "最大計算數量"，則將 "最大計算數量" 更新為 "目前計算數量"
+#   (1) N 除以 2 取餘數 (%)，如果為 1，則重置 "目前計算數量"
+#   (2) N 除以 2 取餘數 (%)，如果為 0，則累加 "目前計算數量"，且如果 "目前計算數量" 大於 "最大計算數量"，
+#       則將 "最大計算數量" 更新為 "目前計算數量"
+#   (3) N 右移 1
 # 6. 返回 "最大計算數量"
 
 Mod37BitPosition = [
@@ -29,10 +31,15 @@ def binary_gap(n)
   n = n >> trailing if trailing > 0
 
   while n > 0
-    # Reset or increase the counter
-    n % 2 == 1 ? current_length = 0 : current_length += 1
-    # Update max length
-    max_length = current_length if max_length < current_length
+    if n % 2 == 1
+      # Reset the counter
+      current_length = 0
+    else
+      # Increase the counter
+      current_length += 1
+      # Update max length
+      max_length = current_length if max_length < current_length
+    end
     # N right shift 1
     n >>= 1
   end
