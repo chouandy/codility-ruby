@@ -44,14 +44,14 @@ end
 
 require 'minitest/autorun'
 
-class FrogJmp1Tests < MiniTest::Unit::TestCase
+class FrogRiverOne1Tests < MiniTest::Unit::TestCase
 
   def test_example1
     assert_equal 6, frog_river_one1(5, [1, 3, 1, 4, 2, 3, 5, 4])
   end
 end
 
-class FrogJmp2Tests < MiniTest::Unit::TestCase
+class FrogRiverOne2Tests < MiniTest::Unit::TestCase
 
   def test_example1
     assert_equal 6, frog_river_one2(5, [1, 3, 1, 4, 2, 3, 5, 4])

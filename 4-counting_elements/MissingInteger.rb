@@ -24,7 +24,7 @@ end
 
 require 'minitest/autorun'
 
-class PermCheckTests < MiniTest::Unit::TestCase
+class MissingIntegerTests < MiniTest::Unit::TestCase
 
   def test_example1
     assert_equal 5, missing_integer([1, 3, 6, 4, 1, 2])

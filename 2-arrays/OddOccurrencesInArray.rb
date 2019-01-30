@@ -9,7 +9,7 @@ end
 
 require 'minitest/autorun'
 
-class BinaryGapTests < MiniTest::Unit::TestCase
+class OddOccurrencesInArrayTests < MiniTest::Unit::TestCase
 
   def test_example1
     assert_equal 7, odd_occurrences_in_array([9,3,9,3,9,7,9])
